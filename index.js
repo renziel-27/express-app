@@ -1,8 +1,12 @@
-const express =require('express');
-const app=express();
-app.get('/',(req,res)=>{
-  res.send({hi: 'there'});
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send({ renziel: 'here' });
 });
-app.listen(3000, () => {
-  console.log('Server is running on http://localhost:3000');
+
+// Use the port Render (or Heroku) provides, or fallback to 3000 locally
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
